@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+    {% block head %}
+    {% endblock %}
+
+    {% if title %}
+        {{title}}
+    {% else %}
+        <title>Me Bigfoot Blog</title>
+    {% endif %}
+</head>
+<body>
+    <header>
+        <img src="{% static '/assets/bigfoot-profile.jpeg' %}" alt="Picture">
+        <h1>Bigfoot's Blog</h1>
+        <ul>
+          <li><a href="{% url 'home' %}">Me Home Page</a></li>
+          <li><a href="{% url 'blog:about' %}">About Me Bigfoot</a></li>
+          <li><a href="{% url 'blog:jokes' %}">Jokes Me Bigfoot</a></li>
+          <li><a href="{% url 'blog:poems' %}">Me Bigfoot Poems</a></li>
+        </ul>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'js/like_button.js' %}"></script>
+</body>
+<footer>
+    <p>If you can big help my bigfoot and smallfoot fam with DOGE:
+    <p>DGrVm5NdTqvbmsJSfY3bgop5obQqqxJaf2</p></p>
+</footer>

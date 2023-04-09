@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block head %}
+    <title>Me Bigfoot Poems</title>
+{% endblock %}
+{% block content %}
+{% if post_list %}
+    {% for post in post_list %}
+    <article>
+        <h2>{{post.title}}</h2>
+        <p>{{post.content}}</p>
+    </article>
+    {% endfor %}
+{% else %}
+    <h2>There are no poems yet...</h2>
+{% endif %}
+
+{% endblock %}
